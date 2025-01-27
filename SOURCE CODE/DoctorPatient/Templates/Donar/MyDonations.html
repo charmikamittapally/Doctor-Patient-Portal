@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Doctor Patient Portal</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+      <!-- fevicon -->
+      <link rel="icon" href="{%static 'images/fevicon.png'%}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{%static 'css/jquery.mCustomScrollbar.min.css'%}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="{%static 'https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'%}">
+      <!-- owl stylesheets --> 
+      <link href="{%static 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap'%}" rel="stylesheet">
+      <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
+      <link rel="stylesoeet" href="{%static 'css/owl.theme.default.min.css'%}">
+      <link rel="stylesheet" href="{%static 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css'%}" media="screen">
+   </head>
+   <body>
+      <!--header section start -->
+      <div class="header_section">
+         <div class="container-fluid">
+            <div class="costum_header">
+               <h3>Doctor Patient Portal</h3>
+               <div class="contact_menu">
+                 
+               </div>
+               <div class="menu_text">
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                   <div class="overlay-content">
+                      
+                        <a href="/donar/donateorgan">View Request</a>                        
+                        <a href="/donar/viewmydonation">view Donation</a>
+						<a href="/donar/donarlogin">Logout</a>
+                     </div>
+                  </div>
+                  <span class="toggle_icon" onclick="openNav()"><img src="{%static 'images/toggle-icon.png'%}" class="toggle_menu"></span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- header section end -->
+      <!-- banner section start -->
+      <div class="banner_section layout_padding">
+         <div class="container">
+            <div id="main_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="banner_taital">
+						   
+                              <h1 class="banner_taital">Welcome to Donar:{{request.session.user}}  </h1>
+                              <p class="banner_text" style="text-align:justify">
+							 
+							  </p>
+                           </div>
+                           <div class="btn_main">
+                              <div class="quote_bt active"><a href="#">Get A Quote</a></div>
+                              <div class="contact_bt"><a href="#">Contact Us</a></div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div><img src="{%static 'images/doctor.jpg'%}" class="banner_img"></div>
+                        </div>
+                     </div>
+                  </div>
+                
+                  
+               </div>
+               <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+               <i class="fa fa-arrow-left" aria-hidden="true"></i>
+               </a>
+               <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+               <i class="fa fa-arrow-right" aria-hidden="true"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!-- banner section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <h1 class="services_taital"></h1>
+            <p class="services_text">
+			View My Donations
+			<center>
+			{{data|safe}}
+			
+			</center>
+			
+			</p>
+            <div class="services_section_2 layout_padding">
+               
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+      <!-- providing section start -->
+    
+     
+    
+     
+      <!-- Javascript files-->
+      <script src="{%static 'js/jquery.min.js'%}"></script>
+      <script src="{%static 'js/popper.min.js'%}"></script>
+      <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+      <script src="{%static 'js/jquery-3.0.0.min.js'%}"></script>
+      <script src="{%static 'js/plugin.js'%}"></script>
+      <!-- sidebar -->
+      <script src="{%static 'js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+      <script src="{%static 'js/custom.js'%}"></script>
+      <!-- javascript --> 
+      <script src="{%static 'js/owl.carousel.js'%}"></script>
+      <script src="{%static 'https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js'%}"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>   
+   </body>
+</html>
